@@ -7,7 +7,5 @@ mongoose.Promise = Promise;
 useUnifiedTopology: true,
 }).then(res=>console.log("succ")).catch(err=>console.log(err));
 
-module.exports.User = require('./auth');
-module.exports.Message = require('./message');
-module.exports.Rent = require('./rent');
-module.exports.UserPayDate = require('./year')
+module.exports.User = require('./user');
+module.exports.Question = require('./question');
