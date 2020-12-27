@@ -18,7 +18,13 @@ const userSchema = new mongoose.Schema({
                 date:{
                     type:Date,
                     default: Date.now()
-                }
+                },
+                question:[
+                    {
+                        type: mongoose.Schema.Types.ObjectId,
+                        ref: 'Question'
+                    }
+                ]
 
 })
 
