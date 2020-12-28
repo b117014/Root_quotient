@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { rootStore } from './_redux';
+import jwtDecode from 'jwt-decode'
+import {Provider} from 'react-redux';
+
+const store = rootStore()
+
+
+if(localStorage.jwtToken){
+  setToken(localStorage.jwtToken);
+  try{
+       store.dispatch(UserAuth(jwtDecode(localStorage.jwtToken)))
+
+  }catch(err){
+     store.dispatch(UserLogout())
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+
+    </Provider>
   );
 }
 
