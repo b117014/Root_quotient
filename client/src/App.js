@@ -11,6 +11,7 @@ const store = rootStore()
 
 
 if(localStorage.jwtToken){
+  console.log(localStorage.jwtToken)
   setToken(localStorage.jwtToken);
   try{
        store.dispatch(UserAuth(jwtDecode(localStorage.jwtToken)))
