@@ -3,6 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import { UserAuth } from '../_redux/action/user';
 import {UserRegisterForm} from './UserRegisterForm'
+import { userRegisterApi } from '../_Api/user';
 
 
 class UserRegisterPage extends React.Component{
@@ -19,11 +20,20 @@ class UserRegisterPage extends React.Component{
        
     }
 
+    onSubmitCallBack = (values)=>{
+        console.log(values)
+        const {email,username} = values
+        userRegisterApi(email,username)
+            .then(res=>{
+                this.props.userAdd(res.data)
+            })
+    }
+
     render(){
        
         return(
             <UserRegisterForm
-                onSubmitCallback={this.onSubmitCallback}
+            onSubmitCallBack={this.onSubmitCallBack}
             />
         )
     }

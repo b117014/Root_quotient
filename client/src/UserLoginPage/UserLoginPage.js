@@ -3,6 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import { UserLoginForm } from './UserLoginForm';
 import { UserAuth } from '../_redux/action/user';
+import { userLoginApi } from '../_Api/user';
 
 class UserLoginPage extends React.Component{
 
@@ -16,6 +17,14 @@ class UserLoginPage extends React.Component{
             this.props.history.push('/')
         }
        
+    }
+    onSubmitCallback = (values)=>{
+        console.log(values)
+        const {email, password} = values
+        userLoginApi(email,password)
+            .then(res=>{
+                this.props.userAdd(res.data)
+            })
     }
 
     render(){

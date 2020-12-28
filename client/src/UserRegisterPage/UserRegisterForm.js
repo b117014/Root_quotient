@@ -26,7 +26,7 @@ class UserRegisterForm extends React.Component{
                             <h2 style={{color:'blue'}}>User Register</h2>
                         </div>
                         <Formik
-                            initialValues={{email:'', password:null}}
+                            initialValues={{email:'', password:''}}
                             validationSchema={schema}
                             onSubmit={(values)=>this.props.onSubmitCallBack(values)}
                             render={({handleSubmit, handleChange, handleBlur, errors, touched, values})=>(
