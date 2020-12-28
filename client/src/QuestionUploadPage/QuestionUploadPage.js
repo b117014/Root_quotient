@@ -1,5 +1,7 @@
 import React from 'react'
 import { QuestionForm } from './QuestionForm'
+import { uploadQuestionApi } from '../_Api/question'
+import { connect } from 'react-redux'
 
 
 class QuestionUploadPage extends React.Component{
@@ -9,8 +11,12 @@ class QuestionUploadPage extends React.Component{
     }
 
     onSubmitCallBack = (values)=>{
-        const {question,tag,title} = values
+        const {description,tag,title} = values
         console.log(values)
+        uploadQuestionApi(description,tag,title, this.props.user.id)
+            .then(res=>{
+                console.log(res.data)
+            })
     }
     render(){
         return(
@@ -21,4 +27,10 @@ class QuestionUploadPage extends React.Component{
     }
 }
 
+function mapStateToProps(state){
+    return{
+        user: state.user.user
+    }
+}
+QuestionUploadPage = connect(mapStateToProps, null)(QuestionUploadPage)
 export {QuestionUploadPage}

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import { UserAuth } from '../_redux/action/user';
 import {UserRegisterForm} from './UserRegisterForm'
 import { userRegisterApi } from '../_Api/user';
+import { setToken } from '../service/setToken';
 
 
 class UserRegisterPage extends React.Component{
@@ -22,9 +23,11 @@ class UserRegisterPage extends React.Component{
 
     onSubmitCallBack = (values)=>{
         console.log(values)
-        const {email,username} = values
-        userRegisterApi(email,username)
+        const {email,password} = values
+        userRegisterApi(email,password)
             .then(res=>{
+                setToken(res.data.token)
+                localStorage.setItem('jwtToken', res.data.token)
                 this.props.userAdd(res.data)
             })
     }

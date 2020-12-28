@@ -3,9 +3,16 @@ const db = require('../models')
 exports.addQuestion = async (req,res,next)=>{
 
         try{
+            console.log(req.body)
             let newQuestion = await db.Question(req.body)
-            newQuestion.user = req.params.user_id
-            newQuestion.save()
+            newQuestion.user = req.body.user_id
+
+            let user = await db.User.findById(req.body.user_id)
+            user.question.push(newQuestion.id)
+
+            await newQuestion.save()
+            await user.save()
+
             res.send(newQuestion)
         }catch(err){
             return next(err)

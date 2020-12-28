@@ -30,7 +30,7 @@ const NavBars = (props)=>{
                    
                      ):( 
                     <div className="flex ">
-                        <div className=""><a style={{color:'white'}} href="/upload/question">Upload Question</a></div>
+                        <div className=""><a style={{color:'white'}} href="/question/upload">Upload Question</a></div>
                         <div className="ml-5"><a style={{color:'white'}} href="#" onClick={Logout} >Logout</a></div>
 
                     </div>

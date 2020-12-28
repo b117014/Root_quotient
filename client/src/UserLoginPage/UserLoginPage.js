@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import { UserLoginForm } from './UserLoginForm';
 import { UserAuth } from '../_redux/action/user';
 import { userLoginApi } from '../_Api/user';
+import { setToken } from '../service/setToken';
 
 class UserLoginPage extends React.Component{
 
@@ -23,6 +24,8 @@ class UserLoginPage extends React.Component{
         const {email, password} = values
         userLoginApi(email,password)
             .then(res=>{
+                setToken(res.data.token)
+                localStorage.setItem('jwtToken', res.data.token)
                 this.props.userAdd(res.data)
             })
     }

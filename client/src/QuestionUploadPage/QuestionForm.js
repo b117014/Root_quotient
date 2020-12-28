@@ -3,7 +3,7 @@ import {Formik} from 'formik'
 import * as yup from 'yup'
 
 const schema = yup.object().shape({
-    question: yup.string('It must be string').required('question is required'),
+    description: yup.string('It must be string').required('question is required'),
     title:  yup.string('It must be string').required('title is required'),
     tag: yup.string('It must be string').required('tag is required'),
 })
@@ -14,7 +14,7 @@ class QuestionForm extends React.Component{
         return(
             <div>
                 <Formik
-                    initialValues={{question:'', title:'', tag:''}}
+                    initialValues={{description:'', title:'', tag:''}}
                     validationSchema={schema}
                     onSubmit={(values)=>this.props.onSubmitCallBack(values)}
                     render={({handleBlur,handleChange,handleSubmit,touched,errors,values})=>(
@@ -25,15 +25,15 @@ class QuestionForm extends React.Component{
                                     <div className="form-group">
                                         <textarea 
                                         type="text"
-                                        placeholder="Enter question"
+                                        placeholder="Enter description"
                                         className="form-control"
-                                        name="question"
-                                        onChange={handleChange('question')}
-                                        value={values.question}
+                                        name="description"
+                                        onChange={handleChange('description')}
+                                        value={values.description}
                                         onBlur={handleBlur}
                                         row={4}
                                         />
-                                    {errors.question && touched.question && (<label className="text-error">{errors.question}</label>)} 
+                                    {errors.description && touched.description && (<label className="text-error">{errors.description}</label>)} 
 
                                     </div>
                                     <div className="answer">

@@ -9,30 +9,31 @@ const express     =    require('express'),
 
 app.use(express.urlencoded({ extended: false })); 
 const userRoute = require('./routes/user')
+const questionRoute = require('./routes/question')
 const errorHandler = require('./controllers/err')
 
   app.use(bodyParser.json());
   app.use(cors());
   app.use(morgan('tiny'));
 
-  app.use('/api', userRoute)
-
-    // error handling
-  
-//     app.use(function(req,res,next){
-//        err = new Error("not found");
-//       err.status = 404;
-//         next(err);
-//   })
+  app.use('/api', (userRoute, questionRoute))
 
   
- 
-//   app.use(errorHandler);
-
-
 app.get('/test', (req,res)=>{
     res.send('hello')
 })
+
+  // error handling
+  
+    app.use(function(req,res,next){
+       err = new Error("not found");
+      err.status = 404;
+        next(err);
+  })
+
+  
+ 
+  app.use(errorHandler);
 
   app.listen(5000);
 
