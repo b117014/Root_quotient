@@ -354,3 +354,28 @@ font-weight: bold;
     box-shadow: 0px 0px 1px 1px #726d6d;
     
 }
+
+.q-container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100px;
+    height: 20px;
+
+}
+
+.tag{
+    border-width: 10px;
+    border-color: #6c757d;
+    height: 10px;
+    width: 50px;
+   
+    
+}
+
+.list-q{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}

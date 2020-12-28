@@ -23,7 +23,7 @@ exports.addQuestion = async (req,res,next)=>{
 exports.getAllQuestion = async (req,res,next)=>{
 
     try{
-        let questions = await db.Question({})
+        let questions = await db.Question.find({})
        
         res.send(questions)
     }catch(err){
