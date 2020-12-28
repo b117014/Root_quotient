@@ -2,6 +2,9 @@ import React from 'react'
 import { rootStore } from './_redux';
 import jwtDecode from 'jwt-decode'
 import {Provider} from 'react-redux';
+import { UserAuth, UserLogout } from './_redux/action/user';
+import { setToken } from './service/setToken';
+import { RouterContent } from './routes';
 
 const store = rootStore()
 
@@ -19,7 +22,7 @@ if(localStorage.jwtToken){
 function App() {
   return (
     <Provider store={store}>
-
+        <RouterContent />
     </Provider>
   );
 }

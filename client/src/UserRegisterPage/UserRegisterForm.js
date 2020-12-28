@@ -7,17 +7,11 @@ const schema = yup.object().shape({
     password: yup.string().required('password is required')
 })
 
-class UserLoginForm extends React.Component{
+class UserRegisterForm extends React.Component{
 
     constructor(props){
         super(props)
-        this.state={
-            
-            email:'',
-            password:"",
-           
-           
-        }
+       
     }
    
     render(){
@@ -29,7 +23,7 @@ class UserLoginForm extends React.Component{
                 <div className="col-lg-5 col-sm-12 p-5 card container ">
                     <div className="container w-75 card-body " >
                         <div className="text-center">
-                            <h2 style={{color:'blue'}}>User Login</h2>
+                            <h2 style={{color:'blue'}}>User Register</h2>
                         </div>
                         <Formik
                             initialValues={{email:'', password:null}}
@@ -65,7 +59,7 @@ class UserLoginForm extends React.Component{
                                     
 
                                         <div className="update-btn">
-                                            <button className="btn" type="submit">Login</button>
+                                            <button className="btn" type="submit">Submit</button>
                                         </div>
                                     </form>
 
@@ -82,4 +76,4 @@ class UserLoginForm extends React.Component{
     }
 }
 
-export {UserLoginForm}
+export {UserRegisterForm}

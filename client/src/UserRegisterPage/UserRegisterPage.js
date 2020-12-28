@@ -1,10 +1,11 @@
 import React from 'react';
 
 import {connect} from 'react-redux'
-import { UserLoginForm } from './UserLoginForm';
 import { UserAuth } from '../_redux/action/user';
+import {UserRegisterForm} from './UserRegisterForm'
 
-class UserLoginPage extends React.Component{
+
+class UserRegisterPage extends React.Component{
 
     onSubmitCallback = (value)=>{
         console.log(value)
@@ -21,8 +22,8 @@ class UserLoginPage extends React.Component{
     render(){
        
         return(
-            <UserLoginForm 
-            onSubmitCallback={this.onSubmitCallback}
+            <UserRegisterForm
+                onSubmitCallback={this.onSubmitCallback}
             />
         )
     }
@@ -39,5 +40,5 @@ function mapStateToProps(state){
     }
 }
 
-UserLoginPage = connect(mapStateToProps, mapStateToDispatch)(UserLoginPage)
-export {UserLoginPage}
+UserRegisterPage = connect(mapStateToProps, mapStateToDispatch)(UserRegisterPage)
+export {UserRegisterPage}
