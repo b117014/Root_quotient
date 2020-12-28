@@ -19,7 +19,13 @@ const questionSchema = new mongoose.Schema({
                 answer:[{
                     type: mongoose.Schema.Types.ObjectId,
                     ref:'Answer'
-                }]
+                }],
+                views:[
+                    {
+                        type: mongoose.Schema.Types.ObjectId,
+                        ref:'User'
+                    }
+                ]
 
 })
 
