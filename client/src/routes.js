@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 import { UserRegisterPage } from './UserRegisterPage/UserRegisterPage';
 import { HomePage } from './HomePage/HomePage';
 import { UserLoginPage } from './UserLoginPage/UserLoginPage';
+import { QuestionUploadPage } from './QuestionUploadPage/QuestionUploadPage';
 
 const RouterContents = (props)=>{
 
@@ -16,6 +17,7 @@ const RouterContents = (props)=>{
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/login" component={UserLoginPage} />
                 <Route exact path="/register" component={UserRegisterPage} />
+                <Route exact path="/question/upload" component={QuestionUploadPage} />
 
             </Switch>
         </Router>
