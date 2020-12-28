@@ -8,3 +8,4 @@ useUnifiedTopology: true,
 
 module.exports.User = require('./user');
 module.exports.Question = require('./question');
+module.exports.Answer = require('./answer');
