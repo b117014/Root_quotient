@@ -34,7 +34,7 @@ class UserLoginForm extends React.Component{
                         <Formik
                             initialValues={{email:'', password:null}}
                             validationSchema={schema}
-                            onSubmit={(values)=>this.props.onSubmitCallBack(values)}
+                            onSubmit={(values)=>this.props.onSubmitCallback(values)}
                             render={({handleSubmit, handleChange, handleBlur, errors, touched, values})=>(
                                 <form onSubmit={handleSubmit}>
                                
