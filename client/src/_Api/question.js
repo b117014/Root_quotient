@@ -18,9 +18,14 @@ function removeQuestionApi(q_id){
     return axios.delete(`/api/question/${q_id}`)
 
 }
+function getQuestionApi(id){
+    return axios.get(`/api/question/${id}`)
+}
+
 export {
     uploadQuestionApi,
     getAllQuestionApi,
     updateQuestionApi,
-    removeQuestionApi
+    removeQuestionApi,
+    getQuestionApi
 }

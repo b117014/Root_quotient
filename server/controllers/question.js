@@ -57,4 +57,23 @@ exports.deleteQuestion = async (req,res,next)=>{
     }
 }
 
+exports.getQuestion = async (req,res,next)=>{
+
+    try{
+        let question = await db.Question.findById(req.params.q_id)
+        console.log(question)
+        question.views = question.views + 1;
+        question.save()
+        question.populate('answer')
+                .execPopulate((err,data)=>{
+                    if(err) {
+                        console.log(err)
+                    };
+                    res.send(data)
+                })
+    }catch(err){
+        return next(err)
+    }
+}
+
 

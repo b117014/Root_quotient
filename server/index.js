@@ -10,6 +10,8 @@ const express     =    require('express'),
 app.use(express.urlencoded({ extended: false })); 
 const userRoute = require('./routes/user')
 const questionRoute = require('./routes/question')
+const answerRoute = require('./routes/answer')
+
 const errorHandler = require('./controllers/err')
 
   app.use(bodyParser.json());
@@ -17,7 +19,7 @@ const errorHandler = require('./controllers/err')
   app.use(morgan('tiny'));
 
   app.use('/api', (userRoute, questionRoute))
-
+    app.use('/api', answerRoute)
   
 app.get('/test', (req,res)=>{
     res.send('hello')

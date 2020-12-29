@@ -46,6 +46,9 @@ class QuestionListPage extends React.Component{
                 console.log(res.data)
             })
     }
+    onChangeRoute = (q_id)=>{
+        this.props.history.push(`/question/${q_id}/answer`)
+    }
     render(){
         return(
             <div className="d-flex container que_">
@@ -54,6 +57,7 @@ class QuestionListPage extends React.Component{
                     onCheckRightUser={this.onCheckRightUser}
                     onUpdateQuestion={this.onUpdateQuestion}
                     onRemoveQuestion={this.onRemoveQuestion}
+                    onChangeRoute={this.onChangeRoute}
                 />
             </div>
         )

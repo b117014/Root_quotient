@@ -24,6 +24,10 @@ const QuestionCard = (props)=>{
                             <button className="btn btn-danger"
                             onClick={()=>props.onRemoveQuestion(res._id)}
                             >Delete</button>
+                            <button className="btn btn-success"
+                            onClick={()=>props.onChangeRoute(res._id)}
+                            >Answer</button>
+                            
                         </div>
                     )}
                      
