@@ -9,7 +9,18 @@ function getAllQuestionApi(){
     return axios.get('/api/questions')
 }
 
+function updateQuestionApi(q_id, user_id, description, tag, title){
+    return axios.put(`/api/question/${q_id}/${user_id}` , {description, title, tag})
+
+}
+
+function removeQuestionApi(q_id){
+    return axios.delete(`/api/question/${q_id}`)
+
+}
 export {
     uploadQuestionApi,
-    getAllQuestionApi
+    getAllQuestionApi,
+    updateQuestionApi,
+    removeQuestionApi
 }

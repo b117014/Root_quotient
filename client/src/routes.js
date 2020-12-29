@@ -8,6 +8,7 @@ import { HomePage } from './HomePage/HomePage';
 import { UserLoginPage } from './UserLoginPage/UserLoginPage';
 import { QuestionUploadPage } from './QuestionUploadPage/QuestionUploadPage';
 import { QuestionListPage } from './QuestionListPage/QuestionListPage';
+import { QuestionUpdatePage } from './QuestionUpdatePage/QuestionUpdatePage';
 
 const RouterContents = (props)=>{
 
@@ -19,6 +20,8 @@ const RouterContents = (props)=>{
                 <Route exact path="/login" component={UserLoginPage} />
                 <Route exact path="/register" component={UserRegisterPage} />
                 <Route exact path="/question/upload" component={QuestionUploadPage} />
+                <Route exact path="/question/update" component={QuestionUpdatePage} />
+
                 <Route eaxct path="/questions" component={QuestionListPage} />
 
             </Switch>

@@ -5,22 +5,35 @@ const QuestionCard = (props)=>{
 
    
         return(
-            <div className="list-q">
+            <>
+                
                 {props.data && props.data.map((res,i)=>(
-                     <div className="container " key={i} >
-                     <div className="">
+                 <div className=" " key={i} >
+                    
                          <h4>{res.description}</h4>
+                    
+                    <div className="">
+                         <div className=""><p>{res.title}</p></div>
+                         <div className=""><p>{res.tag}</p></div>
                      </div>
-                     <div className="q-container">
-                         <div className="tag">{res.title}</div>
-                         <div className="tag">{res.tag}</div>
-                     </div>
+                    {props.onCheckRightUser(res.user) && (
+                        <div>
+                            <button className="btn btn-primary"
+                            onClick={()=>props.onUpdateQuestion(res)}
+                            >Update</button>
+                            <button className="btn btn-danger"
+                            onClick={()=>props.onRemoveQuestion(res._id)}
+                            >Delete</button>
+                        </div>
+                    )}
+                     
+
                  </div>
                 ))}
                    
                     
                 
-            </div>
+            </>
         )
     
 }

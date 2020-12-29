@@ -36,7 +36,7 @@ exports.correctUser = function(req,res,next){
     try{
         let token = req.headers.authorization.split(" ")[1];
         jwt.verify(token,process.env.SECRET_KEY,function(err,decoded){
-                 if(decoded && decoded.id===req.params.id)
+                 if(decoded && decoded.id===req.params.user_id)
                  {
                      return next();
                  }
