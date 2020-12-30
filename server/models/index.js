@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.set('debug',true);
 mongoose.Promise = Promise;
- mongoose.connect('mongodb://localhost:27017/rt',{    
+ mongoose.connect('mongodb+srv://prabhat:prabhat@prabhat.usk7p.mongodb.net/test',{    
 useUnifiedTopology: true,
 }).then(res=>console.log("succ")).catch(err=>console.log(err));
 
