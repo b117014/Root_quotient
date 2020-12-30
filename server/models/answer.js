@@ -15,8 +15,11 @@ const answerSchema = new mongoose.Schema({
                 question:{
                     type: mongoose.Schema.Types.ObjectId,
                     ref:'Question'
-                }
+                },
+            
 
+},{
+    timestamps: true
 })
 
 

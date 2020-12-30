@@ -31,6 +31,8 @@ const questionSchema = new mongoose.Schema({
                     }
               
 
+},{
+    timestamps:true
 })
 
 

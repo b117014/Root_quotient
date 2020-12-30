@@ -4,7 +4,7 @@ const express     =    require('express'),
       bodyParser  =    require('body-parser'),
       morgan      =    require('morgan'),
       cors        =    require('cors'), 
-      mongoose = require('mongoose')  
+      mongoose    = require('mongoose')  
       app         =    express();
 
 app.use(express.urlencoded({ extended: false })); 
@@ -18,7 +18,8 @@ const errorHandler = require('./controllers/err')
   app.use(cors());
   app.use(morgan('tiny'));
 
-  app.use('/api', (userRoute, questionRoute))
+  app.use('/api', userRoute)
+  app.use('/api', questionRoute)
     app.use('/api', answerRoute)
   
 app.get('/test', (req,res)=>{

@@ -4,7 +4,7 @@ exports.addQuestion = async (req,res,next)=>{
 
         try{
             console.log(req.body)
-            let newQuestion = await db.Question(req.body)
+            let newQuestion = await db.Question.create(req.body)
             newQuestion.user = req.body.user_id
 
             let user = await db.User.findById(req.body.user_id)

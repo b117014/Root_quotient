@@ -38,7 +38,7 @@ class AnswerPageContent extends React.Component{
                         
     
                                     <div className="update-btn mt-5">
-                                        <button className="btn">Upload</button>
+                                        <button className="btn">{this.props.title}</button>
                                     </div>
                                  
                                 </form>

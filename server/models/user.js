@@ -31,6 +31,8 @@ const userSchema = new mongoose.Schema({
                     }
                 ]
 
+},{
+    timestamps:true
 })
 
 userSchema.pre('save',async function(next){
@@ -48,10 +50,9 @@ userSchema.pre('save',async function(next){
 
 userSchema.methods.comparePassword = async function(userPassword,next){
            try{
-               console.log(this.password)
-               console.log(userPassword)
+              
                let isMatch = await bcrypt.compare(userPassword,this.password);
-               console.log(isMatch)
+              
                return isMatch;
            }catch(err){
                return next(err)

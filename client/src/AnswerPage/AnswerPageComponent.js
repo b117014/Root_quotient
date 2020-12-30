@@ -31,8 +31,17 @@ class AnswerPageComponent extends React.Component{
                 {this.state.isVisible && (
                     <AnswerPageContent
                         onUploadAnswer={this.props.onUploadAnswer}
+                        title="Upload"
                     />
                 )}
+
+                        {this.props.isUpdate && (
+                            <AnswerPageContent
+                            onUploadAnswer={this.props.onUpdateAnswer}
+                                title="Update"
+                            />
+                        )}
+
                 
 
                 <div className="">
@@ -47,9 +56,14 @@ class AnswerPageComponent extends React.Component{
                                 </div>
                                 <div className="d-flex justify-content-end">
                                     {this.props.onCheckRightUser(res.user) && (
+                                        <div>
                                         <button className="btn btn-danger"
                                         onClick={()=>this.props.onRemoveAnswer(res._id)}
                                         >Delete</button>
+                                        <button className="btn btn-success"
+                                        onClick={()=>this.props.updateForm(res._id)}
+                                        >Update</button>
+                                        </div>
                                     )}
                                 </div>
                         </div>
