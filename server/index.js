@@ -22,9 +22,7 @@ const errorHandler = require('./controllers/err')
   app.use('/api', questionRoute)
     app.use('/api', answerRoute)
   
-app.get('/test', (req,res)=>{
-    res.send('hello')
-})
+
 
   // error handling
   
@@ -38,6 +36,6 @@ app.get('/test', (req,res)=>{
  
   app.use(errorHandler);
 
-  app.listen(5000);
+  app.listen(process.env.PORT || 5000);
 
     

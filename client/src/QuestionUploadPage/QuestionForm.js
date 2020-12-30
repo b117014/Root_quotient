@@ -33,7 +33,7 @@ class QuestionForm extends React.Component{
                                         onBlur={handleBlur}
                                         row={4}
                                         />
-                                    {errors.description && touched.description && (<label className="text-error">{errors.description}</label>)} 
+                                    {errors.description && touched.description && (<label className="text-err">{errors.description}</label>)} 
 
                                     </div>
                                     <div className="answer">
@@ -47,7 +47,7 @@ class QuestionForm extends React.Component{
                                              value={values.tag}
                                              onBlur={handleBlur}
                                             />
-                                        {errors.tag && touched.tag && (<label className="text-error">{errors.tag}</label>)} 
+                                        {errors.tag && touched.tag && (<label className="text-err">{errors.tag}</label>)} 
 
                                         </div>
                                         <div className="form-group">
@@ -60,7 +60,7 @@ class QuestionForm extends React.Component{
                                              value={values.title}
                                              onBlur={handleBlur}
                                             />
-                                            {errors.title && touched.title && (<label className="text-error">{errors.title}</label>)} 
+                                            {errors.title && touched.title && (<label className="text-err">{errors.title}</label>)} 
 
                                         </div>
                                        
