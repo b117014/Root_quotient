@@ -33,7 +33,7 @@ const NavBars = (props)=>{
                     
                     <div className="flex justify-centent-around">
                         <div className=""><a style={{color:'white'}} href="/question/upload">Upload Question</a></div>
-                        <div className=""><a style={{color:'white'}} href="/questions"> Question</a></div>
+                        <div className="ml-5"><a style={{color:'white'}} href="/questions"> Question</a></div>
 
                         <div className="ml-5"><a style={{color:'white'}} href="#" onClick={Logout} >Logout</a></div>
 
