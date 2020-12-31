@@ -1,6 +1,7 @@
 
 # Question Answering Application
 
+``` python
 |--client
         |--src
             |--_Api
@@ -21,6 +22,7 @@
         |--routes
         |--index.js
 
+```
 ## Tech Stack
 
 ##### Frontend
