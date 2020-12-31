@@ -5,10 +5,16 @@ import { UserAuth } from '../_redux/action/user';
 import {UserRegisterForm} from './UserRegisterForm'
 import { userRegisterApi } from '../_Api/user';
 import { setToken } from '../service/setToken';
+import Spinner from 'react-spinners/BounceLoader'
 
 
 class UserRegisterPage extends React.Component{
-
+    constructor(props){
+        super(props)
+        this.state={
+            spinner: false
+        }
+    }
     onSubmitCallback = (value)=>{
         console.log(value)
         
@@ -22,22 +28,33 @@ class UserRegisterPage extends React.Component{
     }
 
     onSubmitCallBack = (values)=>{
-        console.log(values)
+        this.setState({spinner: true})
         const {email,password} = values
         userRegisterApi(email,password)
             .then(res=>{
                 setToken(res.data.token)
                 localStorage.setItem('jwtToken', res.data.token)
                 this.props.userAdd(res.data)
+                this.setState({spinner: false})
+
             })
     }
 
     render(){
        
         return(
+            <>
+            {this.state.spinner && (
+                    <div className="d-flex justify-content-center">
+                    <Spinner
+                    
+                    />
+                    </div>
+                )}
             <UserRegisterForm
             onSubmitCallBack={this.onSubmitCallBack}
             />
+            </>
         )
     }
 }
