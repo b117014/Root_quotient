@@ -1,25 +1,25 @@
 
 # Question Answering Application
 
-|-client
-    |-src
-       |-_Api
-       |-_redux
-       |-AnswerPage
-       |-HomePage
-       |-QuestionListPage
-       |-QuestionUpdatePage
-       |-service
-       |UserLoginPage
-       |-UserRegisterPage
-    |-route.js
+|--client
+        |--src
+            |--_Api
+            |--_redux
+            |--AnswerPage
+            |--HomePage
+            |--QuestionListPage
+            |--QuestionUpdatePage
+            |--service
+            |--UserLoginPage
+            |--UserRegisterPage
+        |--route.js
 
-|-server
-    |-controllers
-    |-middleware
-    |-models
-    |-routes
-    |-index.js
+|--server
+        |--controllers
+        |--middleware
+        |--models
+        |--routes
+        |--index.js
 
 ## Tech Stack
 
