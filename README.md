@@ -1,25 +1,25 @@
 
 # Question Answering Application
 
-|-client
-    |-src
-       |-_Api
-       |-_redux
-       |-AnswerPage
-       |-HomePage
-       |-QuestionListPage
-       |-QuestionUpdatePage
-       |-service
-       |UserLoginPage
-       |-UserRegisterPage
-    |-route.js
+|--client
+        |--src
+            |--_Api
+            |--_redux
+            |--AnswerPage
+            |--HomePage
+            |--QuestionListPage
+            |--QuestionUpdatePage
+            |--service
+            |--UserLoginPage
+            |--UserRegisterPage
+        |--route.js
 
-|-server
-    |-controllers
-    |-middleware
-    |-models
-    |-routes
-    |-index.js
+|--server
+        |--controllers
+        |--middleware
+        |--models
+        |--routes
+        |--index.js
 
 ## Tech Stack
 
@@ -35,16 +35,48 @@
     2. Mongodb
     3. Express.js
 
+# Installation guide for Backend
 
-### Procedure to Execute the Application
+- clone this repo:
 
-    1. Frontend:
-        - client dir is the frontend.
-        - npm i
-        - npm start
-    
-    2. Backend:
-        - server dir is the backend.
-        - npm i
-        - node index.js 
+```
+git clone repo
+```
+
+- Install necessary dependencies:
+
+```
+npm install
+```
+
+- Create a .env file in the project root directory
+
+```
+touch .env
+```
+
+- Run the server:
+
+```
+npm start
+```
+# Installation guide for Frontend
+
+
+- Install necessary dependencies:
+
+
+```
+npm install
+
+```
+touch .env
+```
+
+- Run the server:
+
+```
+npm start
+```
+
             
